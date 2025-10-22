@@ -13,30 +13,25 @@ Park             75       88       63   총점3    평균3
 
 4. 소스는 간결하게, 읽기 쉽게 작성할 것
 """
+
 # 3명의 학생의 이름과 국어, 영어, 수학 점수를 입력받아 list 중첩리스트에 저장하기
-
 list = [[0 for col in range(4)] for row in range(3)]
-
 for x in range(0, 3):
     list[x][0] = input(f"{x+1}번째 학생 성명: ")
     list[x][1] = int(input(f"{list[x][0]}의 국어 점수: "))
     list[x][2] = int(input(f"{list[x][0]}의 영어 점수: "))
     list[x][3] = int(input(f"{list[x][0]}의 수학 점수: "))
 
-print("성명\t국어\t영어\t수학\t총점\t평균")
-
-print("===================================")
-
 # 학생별 출력 및 과목별 합계 계산
+print("성명\t국어\t영어\t수학\t총점\t평균")
 for x in range(0, 3):
     total = 0
     for y in range(0, 4):
-        print(f"{list[x][y]}\t" , end="")
+        print(f"{list[x][y]}\t", end="")
         if y > 0:
             total += list[x][y]
     avg = total / 3
     print(f"{total}\t{avg:.1f}")
-
 print("===================================")
 
 # 과목별 총점 및 평균 계산 및 출력

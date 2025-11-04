@@ -2,8 +2,8 @@
 # 사용자가 입력한 더하기 값이 맞는지 화면에 출력하기
 #
 import random as r
-a = r.randint(1,9)
-b = r.randint(1,9)
+a = r.randint(1, 9)
+b = r.randint(1, 9)
 
 msg = str(a) + "+" + str(b) + "= "
 input_value = int(input(msg))

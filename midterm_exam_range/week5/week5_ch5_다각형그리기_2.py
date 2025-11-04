@@ -6,16 +6,16 @@ t.goto(-100, 200)
 t.down
 n = int(t.textinput("", "몇 각형을 그릴까요?: "))
 
-if n==3 or n==4 or n==5 or n==6:
+if n == 3 or n == 4 or n == 5 or n == 6:
 
-    angle = 360/n
+    angle = 360 / n
 
     t.up()
     t.goto(0, 200)
     t.down()
 
     # 해당 다각형 그리기
-    for i in range(n): 
+    for i in range(n):
         t.forward(n)
         t.left(angle)
 else:

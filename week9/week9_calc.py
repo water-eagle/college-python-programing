@@ -24,41 +24,22 @@ def random_operator(a, b):
         answer = a - b
     elif operator == "*":
         answer = a * b
-    else:  # "/"
-        # 나눗셈은 소수로 나오므로 소수 둘째자리까지 반올림해서 문제로 출제
-        answer = round(a / b, 2)
+    elif operator == "/":
+        answer = a / b
 
     return operator, answer
 
 
 def quiz(a, b, operator, answer):
     tries = 0
-    print(f"문제: {a} {operator} {b} = ?")
-
     while True:
-        user_input = input("정답을 입력하세요: ")
-        try:
-            guess = float(user_input)
-        except ValueError:
-            print("숫자만 입력하세요.")
-            continue
-
-        tries += 1
-
-        # 나눗셈은 반올림해서 비교 (소수 둘째자리까지)
-        if operator == "/":
-            if abs(guess - answer) < 1e-2:
-                print(f"정답입니다! 시도 횟수: {tries}")
-                break
-            else:
-                print("틀렸습니다. 소수 둘째자리까지 반올림해서 다시 시도하세요.")
+        guess = print(f"문제: {a} {operator} {b} = ?")
+        tries += 1  # 정수 연산의 경우 정확히 일치해야 정답
+        if guess == answer:
+            print(f"정답입니다! 시도 횟수: {tries}")
+            break
         else:
-            # 정수 연산의 경우 정확히 일치해야 정답
-            if guess == answer:
-                print(f"정답입니다! 시도 횟수: {tries}")
-                break
-            else:
-                print("틀렸습니다. 다시 시도하세요.")
+            print("틀렸습니다. 다시 시도하세요.")
 
 
 if __name__ == "__main__":

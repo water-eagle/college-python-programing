@@ -12,9 +12,18 @@ tries = 0
 guess = 0
 
 answer = random.randrange(1, 100)
-# print(answer)
-print("1부터 100 사이의 숫자를 맞추시오")
 
+"""
+# 10~99 사이의 무작위 숫자 생성
+a = random.randrange(10, 100)
+b = random.randrange(10, 100)
+# 사칙연산자 무작위 선택
+operator = random.choice(['+', '-', '*', '/'])
+answer = a + b
+"""
+# print(answer)
+
+print("1부터 100 사이의 숫자를 맞추시오")
 while guess != answer:
     guess = int(input("숫자를 입력하시오: "))
     tries = tries + 1

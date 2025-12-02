@@ -5,8 +5,8 @@ p393 - 10개 객체를 생성하려면?
 
 import random
 
-from turtle import *
-
+# from turtle import *
+from turtle import Turtle, register_shape, done
 
 register_shape("car2.gif")
 
@@ -35,3 +35,5 @@ for _ in range(10):  # 10번 반복
     for car in car_list:
         car.drive(random.randint(50, 100))
         car.turnleft(random.choice([0, 90, 180, 270]))
+
+done()  # 터틀 그래픽 창을 닫지 않고 유지
